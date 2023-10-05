@@ -30,14 +30,20 @@ public class MainActivity extends AppCompatActivity {
         String aa=a.getText().toString();
         String bb=b.getText().toString();
         String cc= c.getText().toString();
-            
+
+        if ( aa.isEmpty()|| !TextUtils.isDigitsOnly(aa)|| bb.isEmpty()|| !TextUtils.isDigitsOnly(bb)|| cc.isEmpty()|| !TextUtils.isDigitsOnly(cc)) {
+            Toast.makeText(this, "check ur data", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
         double num2,num3,avg = 0,last1,last2;
 
         double num1;
         num1 = Double.parseDouble(aa);
         num2=Double.parseDouble(bb);
         num3=Double.parseDouble(cc);
-        if ( aa.isEmpty() && TextUtils.isDigitsOnly(aa)&&bb.isEmpty() && TextUtils.isDigitsOnly(bb)&& cc.isEmpty() && TextUtils.isDigitsOnly(cc))
 
         avg = (num2 * num2) - (4 * num1 * num3);
         if(avg<0){
