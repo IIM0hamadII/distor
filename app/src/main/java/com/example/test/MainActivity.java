@@ -3,6 +3,7 @@ package com.example.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         String aa=a.getText().toString();
         String bb=b.getText().toString();
         String cc= c.getText().toString();
-        double num2,num3,avg,last1,last2;
+            
+        double num2,num3,avg = 0,last1,last2;
 
         double num1;
         num1 = Double.parseDouble(aa);
         num2=Double.parseDouble(bb);
         num3=Double.parseDouble(cc);
+        if ( aa.isEmpty() && TextUtils.isDigitsOnly(aa)&&bb.isEmpty() && TextUtils.isDigitsOnly(bb)&& cc.isEmpty() && TextUtils.isDigitsOnly(cc))
 
         avg = (num2 * num2) - (4 * num1 * num3);
         if(avg<0){
